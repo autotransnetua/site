@@ -30,6 +30,12 @@ const Footer = () => {
 								{el.name}
 							</Link>
 						))}
+						<Link
+							href={'#faq'}
+							className='text-lg text-white hover:text-accent-secondary transition-colors duration-300 hover:underline'
+						>
+							Часті запитання
+						</Link>
 					</div>
 
 					<div className='w-full flex flex-col gap-y-3 mx-auto items-center md:items-start order-3 md:order-4 lg:order-3'>
@@ -56,8 +62,8 @@ const Footer = () => {
 								{tel}
 							</Link>
 						</div>
-						<div className='flex items-center gap-x-2 text-accent-secondary mx-auto'>
-							<ClockIcon className='w-5! h-5!' />{' '}
+						<div className='flex items-center gap-x-2 text-accent-secondary mx-auto md:ml-0'>
+							<ClockIcon className='w-5! h-5! shrink-0' />{' '}
 							<p className='text-white'>
 								Відповідаємо щодня з 8:00 до 22:00 · <br />
 								Термінові заявки — цілодобово
@@ -71,6 +77,15 @@ const Footer = () => {
 				</div>
 				<div className='mt-12 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm'>
 					<p>© 2026 AutoTrans. Всі права захищено.</p>
+					{/* <div className='w-fit flex flex-col md:flex-row gap-4 text-white/80 text-xs mx-auto mt-6'>
+						<Link href='/privacy' className='hover:underline'>
+							Політика конфіденційності
+						</Link>{' '}
+						-
+						<Link href='/terms' className='hover:underline'>
+							Умови використання
+						</Link>
+					</div> */}
 				</div>
 			</Container>
 		</footer>
