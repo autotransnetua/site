@@ -5,7 +5,7 @@ import Section from '../base/Section'
 
 const Questions = () => {
 	return (
-		<Section className='py-16 lg:py-20'>
+		<Section className='py-16 lg:py-20' id='faq'>
 			<Container className='w-full flex flex-col'>
 				<Title
 					className=''

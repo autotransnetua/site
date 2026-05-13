@@ -1,3 +1,7 @@
+import ContactsBtns from '@/components/ContactsBtns'
+import Footer from '@/components/sections/Footer'
+import Header from '@/components/sections/Header'
+
 import './globals.css'
 
 import type { Metadata } from 'next'
@@ -73,7 +77,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='uk' className={`${raleway.variable} ${montserrat.variable} h-full antialiased`}>
-			<body className='min-h-full flex flex-col relative'>{children}</body>
+			<body className='min-h-full flex flex-col relative'>
+				<Header />
+				{children} <Footer />
+				<ContactsBtns />
+			</body>
 		</html>
 	)
 }
