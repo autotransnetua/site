@@ -1,11 +1,11 @@
-import TechnologyList from '../TechnologyList'
+import TechnologyList from '../TransportList'
 import Title from '../UI/Title'
 import Container from '../base/Container'
 import Section from '../base/Section'
 
-const Technology = () => {
+const Transport = () => {
 	return (
-		<Section className='py-16 lg:py-20 bg-bg'>
+		<Section className='py-16 lg:py-20 bg-bg' id='transport'>
 			<Container className='w-full flex flex-col items-center gap-y-10 xl:gap-y-14'>
 				<Title
 					className='w-full mx-auto'
@@ -20,4 +20,4 @@ const Technology = () => {
 		</Section>
 	)
 }
-export default Technology
+export default Transport

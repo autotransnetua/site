@@ -10,7 +10,7 @@ import Process from '@/components/sections/Process'
 import Questions from '@/components/sections/Questions'
 import Reviews from '@/components/sections/Reviews'
 import Services from '@/components/sections/Services'
-import Technology from '@/components/sections/Technology'
+import Transport from '@/components/sections/Transport'
 
 export default function Home() {
 	return (
@@ -22,7 +22,7 @@ export default function Home() {
 			<Services />
 			<ContactNow />
 			<Process />
-			<Technology />
+			<Transport />
 			<Guarantees />
 			<Reviews />
 			<Questions />

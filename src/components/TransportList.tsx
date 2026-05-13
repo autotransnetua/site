@@ -1,8 +1,8 @@
-import data from '../data/tech.json'
+import data from '../data/transport.json'
 
 import Image from 'next/image'
 
-type TechItem = {
+type TransportItem = {
 	id: string
 	title: string
 	description: string
@@ -10,15 +10,15 @@ type TechItem = {
 	img: string
 }
 
-const techData = data as TechItem[]
+const transportData = data as TransportItem[]
 
-const TechnologyList = () => {
+const Transport = () => {
 	return (
 		<ul className='w-full grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-10 mx-auto'>
-			{techData.map(el => (
+			{transportData.map(el => (
 				<li
 					key={el.id}
-					className='w-full xl:max-w-95 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100'
+					className='w-full xl:max-w-95 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100 mx-auto'
 				>
 					<div className='h-64 overflow-hidden relative'>
 						<Image
@@ -50,4 +50,4 @@ const TechnologyList = () => {
 		</ul>
 	)
 }
-export default TechnologyList
+export default Transport

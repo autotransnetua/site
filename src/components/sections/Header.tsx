@@ -3,18 +3,13 @@
 import Logo from '../UI/Logo'
 import Container from '../base/Container'
 
+import { navLinks } from '@/constants/baseConstants'
+
 import Link from 'next/link'
 import { useState } from 'react'
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-	const navLinks = [
-		{ name: 'Послуги', href: '#services' },
-		{ name: 'Автопарк', href: '#transport' },
-		{ name: 'Переваги', href: '#guarantees' },
-		{ name: 'Контакти', href: '#contact' }
-	]
 
 	return (
 		<header className='w-full sticky top-0 z-50 shadow-md shadow-accent-secondary/30 border-b border-accent/40 h-26 flex items-center bg-primary backdrop-blur-sm'>
