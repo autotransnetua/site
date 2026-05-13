@@ -2,7 +2,7 @@
 
 :root {
 	--background: #f8fafc;
-	--foreground: #64748b;
+	--foreground: #191d22;
 }
 
 @theme inline {
@@ -11,6 +11,7 @@
 	--color-bg: var(--background);
 	--color-fg: var(--foreground);
 	--color-primary: #010d1d;
+	--color-hovered: #71757a;
 	--color-secondary: #1c1c1e;
 	--color-accent: #bd5502;
 	--color-accent-secondary: #f97316;

@@ -46,7 +46,7 @@ const GuaranteesList = () => {
 			{guaranteeData.map(el => (
 				<li
 					key={el.id}
-					className='text-center p-6 rounded-xl border border-white/50 hover:shadow-lg transition-shadow bg-bg'
+					className='text-center p-6 rounded-xl border border-white/50 bg-bg hover:bg-hovered/15 hover:shadow-lg hover:scale-105 transition-all duration-300'
 				>
 					<div className='w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center text-accent-secondary shadow-sm mb-6'>
 						{el.icon}

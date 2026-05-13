@@ -56,7 +56,7 @@ const ReviewCard = ({
 }) => {
 	return (
 		<div
-			className='bg-white/5 border border-white/10 rounded-xl p-6 w-72 md:w-80 shrink-0 flex flex-col justify-between cursor-default select-none'
+			className='bg-primary/5 border border-primary/10 rounded-xl p-6 w-72 md:w-80 shrink-0 flex flex-col justify-between cursor-default select-none'
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onTouchStart={onTouchStart}
@@ -64,17 +64,15 @@ const ReviewCard = ({
 		>
 			<div>
 				<Stars rating={el.rating} />
-				<p className='italic text-white/80 text-sm leading-relaxed mb-6'>
-					&quot;{el.text}&quot;
-				</p>
+				<p className='italic text-sm leading-relaxed mb-6'>&quot;{el.text}&quot;</p>
 			</div>
 			<div className='flex items-center gap-3'>
 				<div className='w-10 h-10 rounded-full bg-accent-secondary flex items-center justify-center font-bold text-white text-sm shrink-0'>
 					{getInitials(el.name)}
 				</div>
 				<div>
-					<h4 className='text-sm font-bold text-white'>{el.name}</h4>
-					<p className='text-xs text-white/50'>{el.position}</p>
+					<h4 className='text-sm font-bold text-primary'>{el.name}</h4>
+					<p className='text-xs text-primary/50'>{el.position}</p>
 				</div>
 			</div>
 		</div>

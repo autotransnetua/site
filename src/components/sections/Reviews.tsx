@@ -6,7 +6,7 @@ import Section from '../base/Section'
 
 const Reviews = () => {
 	return (
-		<Section className='py-16 lg:py-20 bg-primary relative'>
+		<Section className='py-16 lg:py-20 bg-white relative'>
 			<QuoteIcon className='absolute top-8 right-8 z-0 opacity-15' />
 			<Container className='w-full flex flex-col'>
 				<Title className='' title='Відгуки' />

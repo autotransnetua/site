@@ -4,7 +4,7 @@ import Logo from '../UI/Logo'
 import { HambMenuIcon } from '../assets/iconst'
 import Container from '../base/Container'
 
-import { navLinks } from '@/constants/baseConstants'
+import { navLinks, tel } from '@/constants/baseConstants'
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -31,7 +31,7 @@ const Header = () => {
 						<Logo />
 
 						{/* Desktop Nav */}
-						<nav className='hidden lg:flex items-center gap-12'>
+						<nav className='hidden lg:flex items-center gap-6 xl:gap-10'>
 							{navLinks.map(link => (
 								<Link
 									key={link.name}
@@ -42,10 +42,10 @@ const Header = () => {
 								</Link>
 							))}
 							<Link
-								href='#contact'
-								className='px-6 py-4 rounded-lg border border-accent text-xl font-semibold text-accent hover:bg-accent hover:text-white transition-colors'
+								href={`tel:${tel}`}
+								className='px-3 py-4 xl:px-6 xl:py-4 rounded-lg border border-accent-secondary text-xl font-semibold text-accent-secondary hover:bg-accent hover:text-white transition-colors'
 							>
-								Залишити заявку
+								+38 (099) 123 31 31
 							</Link>
 						</nav>
 

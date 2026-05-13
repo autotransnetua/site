@@ -14,7 +14,7 @@ const ServicesList = () => {
 					key={el.id}
 					className='flex flex-col lg:flex-row lg:not-odd:flex-row-reverse group'
 				>
-					<div className='w-full p-10 md:p-14 lg:p-16 xl:p-24 lg:w-[55%] flex flex-col '>
+					<div className='w-full p-4 md:p-14 lg:p-16 xl:p-24 lg:w-[55%] flex flex-col '>
 						<h3 className='text-4xl uppercase font-bold text-primary mb-6'>
 							{el.title}
 						</h3>
@@ -44,7 +44,11 @@ const ServicesList = () => {
 							priority
 						/>
 						<div
-							className={`absolute inset-0 ${index % 2 === 0 ? 'lg:bg-linear-to-r' : 'lg:bg-linear-to-l'} from-white via-white/30 to-transparent z-1`}
+							className={`absolute top-0 bottom-0 z-1 w-1/5 ${
+								index % 2 === 0
+									? 'left-0 lg:bg-linear-to-r'
+									: 'right-0 lg:bg-linear-to-l'
+							} from-white to-transparent`}
 						/>
 					</div>
 				</li>
