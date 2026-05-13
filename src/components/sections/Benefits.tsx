@@ -2,7 +2,15 @@ import { ClockIcon, LocaleIcon, PeopleIcon, WalletIcon } from '../assets/iconst'
 import Container from '../base/Container'
 import Section from '../base/Section'
 
-const items = [
+import { JSX } from 'react'
+
+type BenefitsItem = {
+	title: string
+	description: string
+	icon: JSX.Element
+}
+
+const items: BenefitsItem[] = [
 	{
 		title: 'Миттєвий Підбір',
 		description: 'Знайдемо попутний рейс у вашому напрямку протягом кількох годин.',
