@@ -18,6 +18,7 @@ export default function Home() {
 		<main className='flex flex-1 w-full flex-col items-center justify-between relative'>
 			<Header />
 			<Hero />
+			<Form />
 			<Benefits />
 			<Counter />
 			<Services />
@@ -25,9 +26,8 @@ export default function Home() {
 			<Process />
 			<Transport />
 			<Guarantees />
-			<Reviews />
 			<Questions />
-			<Form />
+			<Reviews />
 			<Footer />
 			<ContactsBtns />
 		</main>

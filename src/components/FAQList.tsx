@@ -81,7 +81,7 @@ const FAQList = () => {
 	}
 
 	return (
-		<div className='w-full mt-10 flex flex-col items-center gap-y-4'>
+		<div className='w-full xl:max-w-[80%] 2xl:max-w-[60%] mt-10 flex flex-col items-center gap-y-4 mx-auto'>
 			{faqData.map(item => (
 				<FAQItem
 					key={item.id}

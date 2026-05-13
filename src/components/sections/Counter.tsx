@@ -74,14 +74,14 @@ const Counter = () => {
 			<Container>
 				<div
 					ref={sectionRef}
-					className='w-full mx-auto grid grid-cols-1 gap-10 sm:grid-cols-3'
+					className='w-full mx-auto grid grid-cols-1 gap-6 md:gap-3 lg:gap-10 sm:grid-cols-3 items-center'
 				>
 					{items.map((item, idx) => (
 						<div
 							key={item.id}
-							className={`w-full flex flex-col items-center text-center px-5 ${
+							className={`w-full flex flex-col items-center text-center px-5 md:px-3 lg:px-5 ${
 								idx === 1
-									? 'border-t-2 border-b-2 md:border-r-2 md:border-l-2 border-slate-200'
+									? 'border-t-2 border-b-2 md:border-r-2 md:border-l-2 md:border-t-0 md:border-b-0 border-slate-200'
 									: ''
 							}`}
 						>
