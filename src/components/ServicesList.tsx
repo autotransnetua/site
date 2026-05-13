@@ -26,7 +26,7 @@ const ServicesList = () => {
 									key={index}
 									className='text-lg font-medium text-primary flex items-center gap-x-2 leading-normal'
 								>
-									<CheckIcon className='text-accent-secondary' />
+									<CheckIcon className='text-accent-secondary shrink-0' />
 									{property}
 								</p>
 							))}

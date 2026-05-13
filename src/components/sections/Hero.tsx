@@ -23,8 +23,10 @@ const Hero = () => {
 			</div>
 			<Container className='relative z-10 h-full flex flex-col justify-center'>
 				<div className='max-w-3xl flex flex-col gap-y-8 h-full justify-center pt-10 md:pt-0'>
-					<h3 className='hidden md:block text-xl text-accent order-1'>
-						- Перевозимо авто - Доставляємо спокій -{' '}
+					<h3 className='hidden md:flex items-center text-xl text-accent order-1 gap-x-2'>
+						Перевозимо авто
+						<span className='w-2 h-2 rounded-full bg-accent-secondary/80' /> Доставляємо
+						спокій
 					</h3>
 
 					<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white order-2'>

@@ -80,7 +80,9 @@ const Counter = () => {
 						<div
 							key={item.id}
 							className={`w-full flex flex-col items-center text-center px-5 ${
-								idx === 1 ? 'border-r-2 border-l-2 border-slate-200' : ''
+								idx === 1
+									? 'border-t-2 border-b-2 md:border-r-2 md:border-l-2 border-slate-200'
+									: ''
 							}`}
 						>
 							<span

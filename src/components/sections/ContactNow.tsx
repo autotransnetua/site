@@ -11,8 +11,8 @@ const ContactNow = () => {
 			<Container>
 				<div className='w-full md:w-[85%] xl:w-[70%] mx-auto flex flex-col gap-y-10 text-white text-center'>
 					<p>
-						Зв&apos;яжіться з нами зараз, і ми підберемо найвигідніший супутній рейс{' '}
-						<br /> для вашого автомобіля.
+						Зв&apos;яжіться з нами зараз — підберемо найближчий попутний рейс <br /> для
+						вашого автомобіля.
 					</p>
 					<Link href={`tel:${tel}`} className='btn btn-primary mx-auto text-lg'>
 						Зателефонувати зараз

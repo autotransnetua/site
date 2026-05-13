@@ -1,3 +1,4 @@
+import ContactsBtns from '@/components/ContactsBtns'
 import Benefits from '@/components/sections/Benefits'
 import ContactNow from '@/components/sections/ContactNow'
 import Counter from '@/components/sections/Counter'
@@ -14,7 +15,7 @@ import Transport from '@/components/sections/Transport'
 
 export default function Home() {
 	return (
-		<main className='flex flex-1 w-full flex-col items-center justify-between'>
+		<main className='flex flex-1 w-full flex-col items-center justify-between relative'>
 			<Header />
 			<Hero />
 			<Benefits />
@@ -28,6 +29,7 @@ export default function Home() {
 			<Questions />
 			<Form />
 			<Footer />
+			<ContactsBtns />
 		</main>
 	)
 }

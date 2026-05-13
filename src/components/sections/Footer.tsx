@@ -1,7 +1,8 @@
 import Logo from '../UI/Logo'
+import { ClockIcon, LocaleIcon, PhoneIcon } from '../assets/iconst'
 import Container from '../base/Container'
 
-import { navLinks, servicesFooter } from '@/constants/baseConstants'
+import { navLinks, servicesFooter, tel } from '@/constants/baseConstants'
 
 import Link from 'next/link'
 
@@ -45,7 +46,26 @@ const Footer = () => {
 					</div>
 
 					<div className='w-full flex flex-col gap-y-3 mx-auto items-center md:items-start'>
-						<h4 className='text-xl font-bold mb-2 text-white'>Контакти</h4>
+						<h4 className='text-xl font-bold mb-2 text-white'>Зв`язок</h4>
+						<div className='flex items-center gap-x-2 text-accent-secondary'>
+							<PhoneIcon className='w-5! h-5!' />{' '}
+							<Link
+								href={`tel:${tel}`}
+								className='text-white hover:underline hover:text-accent-secondary transition-colors duration-300'
+							>
+								{tel}
+							</Link>
+						</div>
+						<div className='flex items-center gap-x-2 text-accent-secondary'>
+							<ClockIcon />{' '}
+							<p className='text-white'>
+								Відповідаємо щодня з 8:00 до 22:00 · Термінові заявки — цілодобово
+							</p>
+						</div>
+						<div className='flex items-center gap-x-2 text-accent-secondary'>
+							<LocaleIcon className='w-5! h-5!' />{' '}
+							<p className='text-white'>Україна та Європа</p>
+						</div>
 					</div>
 				</div>
 				<div className='mt-12 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm'>
