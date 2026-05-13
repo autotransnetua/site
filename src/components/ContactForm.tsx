@@ -153,7 +153,7 @@ export default function ContactForm() {
 	// ─── Success state ───────────────────────────────────────────
 	if (submitted) {
 		return (
-			<div className='w-full md:w-[50%] flex flex-col items-center justify-center bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100 min-h-64'>
+			<div className='w-full lg:w-[50%] flex flex-col items-center justify-center bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100 min-h-64'>
 				<div className='flex flex-col items-center text-center'>
 					<div className='w-16 h-16 rounded-full bg-accent-secondary flex items-center justify-center text-white text-2xl font-bold mb-5'>
 						✓
@@ -187,7 +187,7 @@ export default function ContactForm() {
 
 	// ─── Form ────────────────────────────────────────────────────
 	return (
-		<div className='w-full md:w-[50%] flex flex-col bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100'>
+		<div className='w-full lg:w-[50%] flex flex-col bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100'>
 			<h2 className='text-primary text-2xl font-bold mb-6'>Напишіть Нам</h2>
 
 			<form

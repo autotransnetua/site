@@ -4,7 +4,7 @@ export const navLinks = [
 	{ name: 'Послуги', href: '#services' },
 	{ name: 'Автопарк', href: '#transport' },
 	{ name: 'Переваги', href: '#guarantees' },
-	{ name: 'З`явитися', href: '#contact' }
+	{ name: 'Зв`язатися', href: '#contact' }
 ]
 export const servicesFooter = [
 	{ name: 'Супутній Евакуатор' },

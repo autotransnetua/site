@@ -15,7 +15,7 @@ const ContactNow = () => {
 						<br /> для вашого автомобіля.
 					</p>
 					<Link href={`tel:${tel}`} className='btn btn-primary mx-auto text-lg'>
-						Отримати пропозицію
+						Зателефонувати зараз
 					</Link>
 				</div>
 			</Container>

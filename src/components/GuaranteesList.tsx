@@ -42,7 +42,7 @@ const guaranteeData: GuaranteeItem[] = [
 
 const GuaranteesList = () => {
 	return (
-		<ul className='w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mx-auto'>
+		<ul className='w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mx-auto'>
 			{guaranteeData.map(el => (
 				<li
 					key={el.id}

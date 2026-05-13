@@ -74,12 +74,14 @@ const Counter = () => {
 			<Container>
 				<div
 					ref={sectionRef}
-					className='w-full xl:w-[80%] mx-auto grid grid-cols-1 gap-10 sm:grid-cols-3'
+					className='w-full mx-auto grid grid-cols-1 gap-10 sm:grid-cols-3'
 				>
-					{items.map(item => (
+					{items.map((item, idx) => (
 						<div
 							key={item.id}
-							className='w-full flex flex-col items-center text-center'
+							className={`w-full flex flex-col items-center text-center px-5 ${
+								idx === 1 ? 'border-r-2 border-l-2 border-slate-200' : ''
+							}`}
 						>
 							<span
 								id={item.id}

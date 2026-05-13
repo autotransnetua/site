@@ -44,7 +44,7 @@ const ServicesList = () => {
 							priority
 						/>
 						<div
-							className={`absolute inset-0 ${index % 2 === 0 ? 'bg-linear-to-r' : 'bg-linear-to-l'} from-white via-white/10 to-transparent`}
+							className={`absolute inset-0 ${index % 2 === 0 ? 'lg:bg-linear-to-r' : 'lg:bg-linear-to-l'} from-white via-white/30 to-transparent z-1`}
 						/>
 					</div>
 				</li>

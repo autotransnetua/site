@@ -16,8 +16,8 @@ const Form = () => {
 					isCentered
 				/>
 				{/* items-stretch — обидві колонки однакової висоті */}
-				<div className='flex flex-col md:flex-row items-stretch justify-between w-full gap-10'>
-					<div className='w-full md:w-[50%] rounded-2xl overflow-hidden'>
+				<div className='flex flex-col lg:flex-row items-stretch justify-between w-full gap-10'>
+					<div className='w-full lg:w-[50%] rounded-2xl overflow-hidden'>
 						<Image
 							src='/images/form-photo.jpg'
 							alt='Form Image'
