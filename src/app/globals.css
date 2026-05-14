@@ -243,3 +243,17 @@
 	line-height: 1.6;
 	max-width: 320px;
 }
+
+.privacy ul,
+.privacy ol,
+.terms ul,
+.terms ol {
+	list-style: disc !important;
+	margin-left: 5px;
+}
+
+.privacy li,
+.terms li {
+	list-style: disc !important;
+	margin-left: 5px;
+}

@@ -77,15 +77,15 @@ const Footer = () => {
 				</div>
 				<div className='mt-12 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm'>
 					<p>© 2026 AutoTrans. Всі права захищено.</p>
-					{/* <div className='w-fit flex flex-col md:flex-row gap-4 text-white/80 text-xs mx-auto mt-6'>
+					<div className='w-fit flex flex-col md:flex-row gap-4 text-white/80 text-xs mx-auto mt-4'>
 						<Link href='/privacy' className='hover:underline'>
 							Політика конфіденційності
 						</Link>{' '}
-						-
+						<span className='text-slate-500 hidden lg:inline'>·</span>
 						<Link href='/terms' className='hover:underline'>
 							Умови використання
 						</Link>
-					</div> */}
+					</div>
 				</div>
 			</Container>
 		</footer>
