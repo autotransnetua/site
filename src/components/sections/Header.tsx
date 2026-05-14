@@ -103,8 +103,8 @@ const Header = () => {
 				<nav className='flex flex-col px-6 py-8 gap-2 flex-1'>
 					{navLinks.map(link => (
 						<Link
-							key={link.name}
-							href={link.href}
+							key={`${link.name}`}
+							href={`/${link.href}`}
 							onClick={close}
 							className='text-lg font-semibold text-white/80 hover:text-accent-secondary py-3 border-b border-white/10 transition-colors duration-200'
 						>
