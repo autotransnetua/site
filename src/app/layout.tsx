@@ -22,7 +22,7 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-	// metadataBase: new URL('https://autotrans.com.ua'),
+	metadataBase: new URL('https://autotrans.net.ua'),
 	title: 'Евакуатор по Україні — Супутній та Індивідуальний | AutoTrans',
 	description:
 		'Супутній та індивідуальний евакуатор між містами України та доставка авто з Європи. Київ, Харків, Дніпро, Одеса, Львів — щоденні рейси. Фіксована ціна, відповідь за 5 хвилин.',
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
 	],
 	robots: { index: true, follow: true },
 
-	// alternates: {
-	// 	canonical: 'https://autotrans.com.ua'
-	// },
+	alternates: {
+		canonical: 'https://autotrans.net.ua'
+	},
 
 	openGraph: {
 		type: 'website',
-		// url: 'https://autotrans.com.ua',
+		url: 'https://autotrans.net.ua',
 		title: 'Евакуатор по Україні — Супутній та Індивідуальний | AutoTrans',
 		description:
 			'Перевезення авто між містами України та доставка з Польщі, Німеччини, Литви. Платите лише в один бік — до 50% економії.',
