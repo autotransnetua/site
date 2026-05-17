@@ -43,9 +43,9 @@ const Hero = () => {
 						+38 (099) 123 31 31
 					</Link>
 
-					<p className='text-xl text-white/90 leading-relaxed order-4'>
-						Економія до 50% на перевезенні авто завдяки попутним маршрутам. Надійно,
-						безпечно та вчасно. Ваш автомобіль у надійних руках.
+					<p className='text-xl font-semibold text-white leading-relaxed order-4'>
+						Економія до 50% на перевезенні авто завдяки попутним маршрутам. <br />
+						Надійно, безпечно та вчасно. Ваш автомобіль у надійних руках.
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-6 md:order-5'>
