@@ -1,9 +1,9 @@
 export const tel = '+380991233131'
+export const email = 'autotrans.net.ua@gmail.com'
 
 export const navLinks = [
 	{ name: 'Послуги', href: '#services' },
-	// { name: 'Автопарк', href: '#transport' },
-	{ name: 'Ціни', href: '#price' },
+	{ name: 'Автопарк', href: '#transport' },
 	{ name: 'Переваги', href: '#guarantees' },
 	{ name: 'Зв`язатися', href: '#contact' }
 ]
