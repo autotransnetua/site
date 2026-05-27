@@ -3,6 +3,7 @@
 
 import { sendMessage } from '@/app/actions/sendMessage'
 
+import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Toastify from 'toastify-js'
@@ -41,6 +42,8 @@ export default function ContactForm() {
 	const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null)
 	const openedAtRef = useRef<number>(0)
 
+	const router = useRouter()
+
 	const {
 		register,
 		handleSubmit,
@@ -52,6 +55,7 @@ export default function ContactForm() {
 	})
 
 	useEffect(() => {
+		// store open time (ms since epoch)
 		openedAtRef.current = Date.now()
 		try {
 			const saved = localStorage.getItem(LS_KEY)
@@ -101,15 +105,15 @@ export default function ContactForm() {
 
 	const onSubmit = async (data: FormValues) => {
 		if (data.honeypot) {
-			setSubmitted(true)
+			router.push('/thank-you')
 			return
 		}
 
+		// check elapsed time since form opened
 		// eslint-disable-next-line react-hooks/purity
-		const now = Date.now()
-		const elapsed = now - openedAtRef.current
+		const elapsed = Date.now() - openedAtRef.current
 		if (elapsed < 3000) {
-			setSubmitted(true)
+			router.push('/thank-you')
 			return
 		}
 
@@ -120,7 +124,7 @@ export default function ContactForm() {
 				name: data.name,
 				phone: data.phone,
 				message: data.message,
-				sentAt: new Date(now).toLocaleString('uk-UA', {
+				sentAt: new Date().toLocaleString('uk-UA', {
 					timeZone: 'Europe/Kyiv',
 					day: '2-digit',
 					month: '2-digit',
@@ -130,13 +134,9 @@ export default function ContactForm() {
 				})
 			})
 
-			// Чистимо localStorage повністю
 			localStorage.removeItem(LS_KEY)
-
-			// Чистимо форму повністю
 			reset({ name: '', phone: '', message: '', honeypot: '' }, { keepDefaultValues: false })
-
-			setSubmitted(true)
+			router.push('/thank-you')
 		} catch (err) {
 			console.error(err)
 			showErrorToast('Помилка відправки. Спробуйте ще раз або зателефонуйте нам.')

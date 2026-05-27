@@ -1,4 +1,7 @@
+import { email, tel } from '@/constants/baseConstants'
+
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
 	title: 'Умови використання | AutoTrans',
@@ -116,13 +119,19 @@ export default function TermsPage() {
 			</p>
 			<p className='mt-2'>
 				Для досудового врегулювання:{' '}
-				{/* <a href='mailto:info@autotrans.com.ua' className='underline'>
-					info@autotrans.com.ua
-				</a>{' '}
-				або{' '} */}
-				<a href='tel:+380991233131' className='underline'>
+				<Link
+					href={`mailto:${email}`}
+					className='underline hover:text-accent-secondary duration-300'
+				>
+					{email}
+				</Link>{' '}
+				або{' '}
+				<Link
+					href={`tel:${tel}`}
+					className='underline hover:text-accent-secondary duration-300'
+				>
 					+38 (099) 123 31 31
-				</a>
+				</Link>
 			</p>
 
 			<h2 className='font-semibold text-lg mt-8 mb-3'>10. Зміни до Умов</h2>
@@ -133,17 +142,23 @@ export default function TermsPage() {
 
 			<h2 className='font-semibold text-lg mt-8 mb-3'>11. Контакти</h2>
 			<ul className='list-disc pl-5 space-y-1'>
-				{/* <li>
+				<li>
 					Email:{' '}
-					<a href='mailto:info@autotrans.com.ua' className='underline'>
-						info@autotrans.com.ua
-					</a>
-				</li> */}
+					<Link
+						href={`mailto:${email}`}
+						className='underline hover:text-accent-secondary duration-300'
+					>
+						{email}
+					</Link>
+				</li>
 				<li>
 					Телефон:{' '}
-					<a href='tel:+380991233131' className='underline'>
+					<Link
+						href={`tel:${tel}`}
+						className='underline hover:text-accent-secondary duration-300'
+					>
 						+38 (099) 123 31 31
-					</a>
+					</Link>
 				</li>
 				<li>Месенджери: Telegram, Viber</li>
 			</ul>

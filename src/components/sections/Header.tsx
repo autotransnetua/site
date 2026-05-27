@@ -35,7 +35,7 @@ const Header = () => {
 							{navLinks.map(link => (
 								<Link
 									key={link.name}
-									href={link.href}
+									href={`/${link.href}`}
 									className='text-xl font-semibold text-accent-secondary hover:text-accent transition-colors'
 								>
 									{link.name}

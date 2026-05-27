@@ -1,8 +1,8 @@
 import Logo from '../UI/Logo'
-import { ClockIcon, LocaleIcon, PhoneIcon } from '../assets/iconst'
+import { ClockIcon, EmailIcon, LocaleIcon, PhoneIcon } from '../assets/iconst'
 import Container from '../base/Container'
 
-import { navLinks, servicesFooter, tel } from '@/constants/baseConstants'
+import { email, navLinks, servicesFooter, tel } from '@/constants/baseConstants'
 
 import Link from 'next/link'
 
@@ -60,6 +60,15 @@ const Footer = () => {
 								className='text-accent-secondary hover:underline duration-300 text-lg'
 							>
 								{tel}
+							</Link>
+						</div>
+						<div className='flex items-center gap-x-2 text-accent-secondary'>
+							<EmailIcon className='w-5! h-5!' />{' '}
+							<Link
+								href={`mailto:${email}`}
+								className='text-white hover:text-accent-secondary duration-300 text-lg'
+							>
+								{email}
 							</Link>
 						</div>
 						<div className='flex items-center gap-x-2 text-accent-secondary mx-auto md:ml-0'>

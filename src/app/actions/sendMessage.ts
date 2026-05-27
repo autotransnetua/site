@@ -16,13 +16,13 @@ export async function sendMessage(data: MessageData): Promise<{ success: boolean
 	}
 
 	const text = [
-		`🚗 <b>Нова заявка з сайту</b>`,
+		`<b>Нова заявка з сайту</b>`,
 		``,
-		`👤 <b>Ім'я:</b> ${data.name}`,
-		`📞 <b>Телефон:</b> ${data.phone}`,
-		`💬 <b>Повідомлення:</b> ${data.message || '—'}`,
+		`<b>Ім'я:</b> ${data.name}`,
+		`<b>Телефон:</b> ${data.phone}`,
+		`<b>Повідомлення:</b> ${data.message || '—'}`,
 		``,
-		`🕐 <b>Час:</b> ${data.sentAt}`
+		`<b>Час:</b> ${data.sentAt}`
 	].join('\n')
 
 	const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
