@@ -13,7 +13,7 @@ const ContactsBtns = () => {
 				<PhoneIcon className='w-7! h-7! xl:w-10! xl:h-10! group-hover:rotate-15 transform-all duration-300' />
 			</Link>
 			<Link
-				href={`https://t.me/${tel}`}
+				href={`http://t.me/Autotransss`}
 				className='w-12 h-12 md:w-14 md:h-14 xl:w-16 xl:h-16 rounded-full flex items-center justify-center shadow-xl shadow-accent-secondary bg-accent-secondary text-white hover:scale-105 transform-all duration-300 cursor-pointer z-15 group'
 			>
 				<FlyIcon className='-rotate-45 w-7! h-7! xl:w-10! xl:h-10! group-hover:-rotate-15 transform-all duration-300' />
