@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const Hero = () => {
 	return (
-		<Section className='relative bg-slate-900 text-white overflow-hidden h-185 lg:min-h-200 flex flex-col justify-center pb-10 md:pb-0'>
+		<Section className='relative bg-slate-900 text-white overflow-hidden min-h-200 flex flex-col justify-center pb-10 md:pb-0'>
 			{/* Background Image with Overlay */}
 			<div className='absolute inset-0 z-0'>
 				<Image
@@ -49,16 +49,13 @@ const Hero = () => {
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-6 md:order-5'>
-						<Link href='#contact' className='text-lg btn btn-primary'>
-							<MessageIcon />
-							<span>Залишити Заявку</span>
-						</Link>
-						<Link
-							href={`tel:${tel}`}
-							className='btn btn-secondary-transparent text-lg '
-						>
+						<Link href={`tel:${tel}`} className='text-lg btn btn-primary'>
 							<PhoneIcon />
 							Зателефонувати
+						</Link>
+						<Link href='#contact' className='btn btn-primary text-lg'>
+							<MessageIcon />
+							<span>Залишити Заявку</span>
 						</Link>
 					</div>
 
