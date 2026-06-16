@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const Form = () => {
 	return (
-		<Section className='py-16 lg:py-20 bg-bg' id='contact'>
+		<Section className='py-16 bg-bg' id='contact'>
 			<Container className='w-full flex flex-col items-center gap-y-10 xl:gap-y-14'>
 				<Title
 					className='max-w-5xl mx-auto'
