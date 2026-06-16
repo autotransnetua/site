@@ -53,7 +53,7 @@ const Hero = () => {
 							<PhoneIcon />
 							Зателефонувати
 						</Link>
-						<Link href='#contact' className='btn btn-primary text-lg'>
+						<Link href='#contact' className='btn btn-secondary-transparent text-lg'>
 							<MessageIcon />
 							<span>Залишити Заявку</span>
 						</Link>
