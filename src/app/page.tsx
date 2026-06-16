@@ -13,12 +13,12 @@ export default function Home() {
 	return (
 		<main className='flex flex-1 w-full flex-col items-center justify-between relative'>
 			<Hero />
+			<ContactNow />
 			<Form />
 			{/* <Cost /> */}
 			<Benefits />
 			<Counter />
 			<Services />
-			<ContactNow />
 			<Process />
 			{/* <Transport /> */}
 			<Guarantees />

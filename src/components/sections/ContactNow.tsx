@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const ContactNow = () => {
 	return (
-		<Section className='bg-primary  py-16'>
+		<Section className='bg-primary py-10'>
 			<Container>
 				<div className='w-full md:w-[85%] xl:w-[70%] mx-auto flex flex-col gap-y-10 text-white text-center'>
 					<p>
