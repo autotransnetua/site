@@ -241,9 +241,10 @@ export default function ContactForm() {
 				</div>
 
 				{/* Телефон */}
+
 				<div className='flex flex-col gap-y-1.5 relative'>
 					<label htmlFor='phone' className='text-sm font-bold text-primary'>
-						Номер Телефону
+						Номер Телефону (формат: +380XXXXXXXXX)
 					</label>
 					<Controller
 						name='phone'
