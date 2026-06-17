@@ -5,7 +5,8 @@ import { sendMessage } from '@/app/actions/sendMessage'
 
 import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
+import { IMaskInput } from 'react-imask'
 import Toastify from 'toastify-js'
 import 'toastify-js/src/toastify.css'
 
@@ -48,6 +49,7 @@ export default function ContactForm() {
 		register,
 		handleSubmit,
 		setValue,
+		control,
 		reset,
 		formState: { errors }
 	} = useForm<FormValues>({
@@ -244,56 +246,34 @@ export default function ContactForm() {
 					<label htmlFor='phone' className='text-sm font-bold text-primary'>
 						Номер Телефону (формат: +380XXXXXXXXX)
 					</label>
-					<input
-						id='phone'
-						type='tel'
-						placeholder='+380XXXXXXXXX'
-						autoComplete='tel'
-						maxLength={13}
-						className={`w-full px-4 py-3 rounded-lg border bg-slate-50 text-primary placeholder:text-slate-400 outline-none transition-all duration-200 focus:bg-white focus:border-accent-secondary focus:ring-2 focus:ring-accent-secondary/20 ${
-							errors.phone
-								? 'border-red-400 ring-2 ring-red-400/20'
-								: 'border-slate-200'
-						}`}
-						onKeyDown={e => {
-							const allowed = [
-								'Backspace',
-								'Delete',
-								'ArrowLeft',
-								'ArrowRight',
-								'Tab',
-								'Home',
-								'End'
-							]
-							if (allowed.includes(e.key)) return
-							// '+' тільки на першій позиції
-							if (e.key === '+' && (e.currentTarget.selectionStart ?? 0) === 0) return
-							// тільки цифри
-							if (/^\d$/.test(e.key)) return
-							e.preventDefault()
-						}}
-						{...register('phone', {
+					<Controller
+						name='phone'
+						control={control}
+						rules={{
 							required: 'Вкажіть номер телефону',
-							pattern: {
-								value: /^(\+380\d{9}|380\d{9}|0\d{9})$/,
-								message: 'Формат: +380XXXXXXXXX, 380XXXXXXXXX або 0XXXXXXXXX'
-							},
-							onChange: e => {
-								let val: string = e.target.value
-								val = val.replace(/[^\d+]/g, '')
-								val = val.replace(/(?!^)\+/g, '')
-
-								const max = val.startsWith('+')
-									? 13
-									: val.startsWith('380')
-										? 12
-										: 10
-								if (val.length > max) val = val.slice(0, max)
-
-								e.target.value = val
-								handlePersist('phone', val)
-							}
-						})}
+							validate: value =>
+								value.replace(/\D/g, '').length === 12 || 'Введіть повний номер'
+						}}
+						render={({ field }) => (
+							<IMaskInput
+								id='phone'
+								mask='+380 00 000 00 00'
+								autoComplete='off'
+								defaultValue='+380'
+								onAccept={(value: string) => {
+									field.onChange(value)
+									handlePersist('phone', value)
+								}}
+								onFocus={e => {
+									setTimeout(() => e.target.setSelectionRange(5, 5), 0)
+								}}
+								className={`w-full px-4 py-3 rounded-lg border bg-slate-50 text-primary outline-none transition-all duration-200 focus:bg-white focus:border-accent-secondary focus:ring-2 focus:ring-accent-secondary/20 ${
+									errors.phone
+										? 'border-red-400 ring-2 ring-red-400/20'
+										: 'border-slate-200'
+								}`}
+							/>
+						)}
 					/>
 					{errors.phone && (
 						<span className='text-xs text-red-500 absolute -bottom-4 left-1 italic'>

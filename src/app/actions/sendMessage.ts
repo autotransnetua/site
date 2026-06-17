@@ -31,7 +31,7 @@ async function sendToTelegram(data: MessageData): Promise<void> {
 	})
 
 	const result = await res.json()
-	console.log('Telegram response:', result)
+
 	if (!res.ok || !result.ok) throw new Error(result.description || 'Telegram API error')
 }
 
@@ -62,7 +62,6 @@ async function sendToSalesDrive(data: MessageData): Promise<void> {
 			utmPage: '/'
 		})
 	})
-	console.log('SalesDrive response status:', res.status)
 
 	if (!res.ok) {
 		const text = await res.text()
