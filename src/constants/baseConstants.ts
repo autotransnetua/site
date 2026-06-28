@@ -8,7 +8,7 @@ export const navLinks = [
 	{ name: 'Зв`язатися', href: '#contact' }
 ]
 export const servicesFooter = [
-	{ name: 'Супутній Евакуатор' },
+	{ name: 'Попутний Евакуатор' },
 	{ name: 'Перевезення по Україні' },
 	{ name: 'Доставка Європа-Україна' },
 	{ name: 'Екстрена Евакуація' },

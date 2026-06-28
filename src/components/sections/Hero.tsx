@@ -30,7 +30,7 @@ const Hero = () => {
 					</h3> */}
 
 					<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white order-2'>
-						<span className='text-accent-secondary'>Супутній</span> та <br />
+						<span className='text-accent-secondary'>Попутний</span> та <br />
 						<span className='text-accent-secondary'>індивідуальний</span> Евакуатор{' '}
 						<br />
 						<span className=''>Україна та Європа</span>
