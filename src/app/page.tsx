@@ -1,5 +1,6 @@
 import Benefits from '@/components/sections/Benefits'
 import ContactNow from '@/components/sections/ContactNow'
+import Cost from '@/components/sections/Cost'
 import Counter from '@/components/sections/Counter'
 import Form from '@/components/sections/Form'
 import Guarantees from '@/components/sections/Guarantees'
@@ -14,7 +15,7 @@ export default function Home() {
 		<main className='flex flex-1 w-full flex-col items-center justify-between relative'>
 			<Hero />
 			<Form />
-			{/* <Cost /> */}
+			<Cost />
 			<Benefits />
 			<Counter />
 			<Services />

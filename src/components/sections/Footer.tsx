@@ -14,7 +14,7 @@ const Footer = () => {
 					<div className='w-full flex flex-col gap-y-5 -mt-2 items-center md:items-start order-1'>
 						<Logo />
 						<p className='w-full text-white/80 text-center md:text-left'>
-							Супутній евакуатор та професійні послуги автовоза по всій Україні та
+							Попутний евакуатор та професійні послуги автовоза по всій Україні та
 							Європі. <br />
 							Ваш автомобіль - наша турбота.
 						</p>
