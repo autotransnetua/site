@@ -73,10 +73,7 @@ const Footer = () => {
 						</div>
 						<div className='flex items-center gap-x-2 text-accent-secondary mx-auto md:ml-0'>
 							<ClockIcon className='w-5! h-5! shrink-0' />{' '}
-							<p className='text-white'>
-								Відповідаємо щодня з 8:00 до 22:00 · <br />
-								Термінові заявки — цілодобово
-							</p>
+							<p className='text-white'>Відповідаємо цілодобово</p>
 						</div>
 						<div className='flex items-center gap-x-2 text-accent-secondary'>
 							<LocaleIcon className='w-5! h-5!' />{' '}

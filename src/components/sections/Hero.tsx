@@ -49,6 +49,10 @@ const Hero = () => {
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-6 md:order-5'>
+						<h3 className='text-xl text-accent order-1 gap-x-2'>
+							Ціна: від 25 грн/км — Телефонуйте!
+						</h3>
+
 						<Link href={`tel:${tel}`} className='text-lg btn btn-primary'>
 							<PhoneIcon />
 							Зателефонувати
