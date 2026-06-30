@@ -28,31 +28,26 @@ const Hero = () => {
 						<span className='w-2 h-2 rounded-full bg-accent-secondary/80' /> Доставляємо
 						спокій
 					</h3> */}
-
 					<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white order-2'>
 						<span className='text-accent-secondary'>Попутний</span> та <br />
 						<span className='text-accent-secondary'>індивідуальний</span> Евакуатор{' '}
 						<br />
 						<span className=''>Україна та Європа</span>
 					</h1>
-
 					<Link
 						href={`tel:${tel}`}
 						className='text-3xl md:text-4xl xl:text-5xl font-bold text-accent-secondary hover:underline order-3 my-2'
 					>
 						+38 (099) 123 31 31
 					</Link>
-
 					<p className='text-xl font-semibold text-white leading-relaxed order-4'>
 						Економія до 50% на перевезенні авто завдяки попутним маршрутам. <br />
 						Надійно, безпечно та вчасно. Ваш автомобіль у надійних руках.
-					</p>
-
-					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-6 md:order-5'>
-						<h3 className='text-xl text-accent order-1 gap-x-2'>
-							Ціна: від 25 грн/км — Телефонуйте!
-						</h3>
-
+					</p>{' '}
+					<h3 className='text-xl text-accent-secondary order-1 gap-x-2 order-5'>
+						Ціна: від 25 грн/км — Телефонуйте!
+					</h3>
+					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-7 md:order-6'>
 						<Link href={`tel:${tel}`} className='text-lg btn btn-primary'>
 							<PhoneIcon />
 							Зателефонувати
@@ -62,7 +57,6 @@ const Hero = () => {
 							<span>Залишити Заявку</span>
 						</Link>
 					</div>
-
 					<div className='md:mt-3 flex flex-wrap items-center gap-6 md:gap-8 font-medium text-white/90 order-5 md:order-6'>
 						<div className='flex items-center gap-2'>
 							<WalletIcon className='text-accent-secondary' />
