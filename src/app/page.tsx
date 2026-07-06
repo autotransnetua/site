@@ -2,6 +2,7 @@ import Benefits from '@/components/sections/Benefits'
 import ContactNow from '@/components/sections/ContactNow'
 import Cost from '@/components/sections/Cost'
 import Counter from '@/components/sections/Counter'
+import Driver from '@/components/sections/Driver'
 import Form from '@/components/sections/Form'
 import Guarantees from '@/components/sections/Guarantees'
 import Hero from '@/components/sections/Hero'
@@ -19,8 +20,9 @@ export default function Home() {
 			<Benefits />
 			<Counter />
 			<Services />
-			<ContactNow />
+			<Driver />
 			<Process />
+			<ContactNow />
 			{/* <Transport /> */}
 			<Guarantees />
 			<Questions />

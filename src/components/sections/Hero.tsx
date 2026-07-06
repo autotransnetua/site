@@ -44,7 +44,7 @@ const Hero = () => {
 						Економія до 50% на перевезенні авто завдяки попутним маршрутам. <br />
 						Надійно, безпечно та вчасно. Ваш автомобіль у надійних руках.
 					</p>{' '}
-					<h3 className='text-xl text-accent-secondary order-1 gap-x-2 order-5'>
+					<h3 className='text-xl text-accent-secondary gap-x-2 order-5'>
 						Ціна: від 25 грн/км — Телефонуйте!
 					</h3>
 					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-7 md:order-6'>
@@ -67,6 +67,24 @@ const Hero = () => {
 							<PriceIcon className='text-accent-secondary' />
 							<span>Фіксована ціна без сюрпризів</span>
 						</div>
+					</div>
+					<div className='w-fit px-4 py-3 border border-accent-secondary bg-accent-secondary/10 flex flex-col lg:flex-row gap-y-4 gap-x-3 order-7 md:items-center justify-center rounded-lg'>
+						<div className='flex items-center gap-x-2'>
+							<div className='relative flex w-3 h-3'>
+								<span className='absolute inline-flex h-full w-full rounded-full bg-accent-secondary animate-ping-smooth' />
+								<span className='relative inline-flex w-3 h-3 rounded-full bg-accent-secondary/80' />
+							</div>
+							<p className='text-accent-secondary'>
+								Не хочете їхати самі? Новий сервіс —{' '}
+								<span className='font-semibold'>Перегін авто з водієм.</span>
+							</p>
+						</div>
+						<Link
+							href='#driver'
+							className='text-accent-secondary font-semibold hover:underline'
+						>
+							Дізнатись умови
+						</Link>
 					</div>
 				</div>
 			</Container>
