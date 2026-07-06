@@ -21,8 +21,8 @@ export default function Home() {
 			<Counter />
 			<Services />
 			<Driver />
-			<ContactNow />
 			<Process />
+			<ContactNow />
 			{/* <Transport /> */}
 			<Guarantees />
 			<Questions />

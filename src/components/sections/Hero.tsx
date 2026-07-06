@@ -69,7 +69,7 @@ const Hero = () => {
 						</div>
 					</div>
 					<div className='w-fit px-4 py-3 border border-accent-secondary bg-accent-secondary/10 flex gap-x-3 order-7  items-center justify-center rounded-lg'>
-						<div className='w-3 h-3 rounded-full bg-accent-secondary/80' />
+						<div className='w-3 h-3 rounded-full bg-accent-secondary/80 ' />
 						<p className='text-white'>
 							Новий сервіс —{' '}
 							<span className='font-semibold'>Перегін авто з водієм.</span> Не хочете
