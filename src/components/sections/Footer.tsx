@@ -13,10 +13,9 @@ const Footer = () => {
 				<div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-8 items-start'>
 					<div className='w-full flex flex-col gap-y-5 -mt-2 items-center md:items-start order-1'>
 						<Logo />
-						<p className='w-full text-white/80 text-center md:text-left'>
-							Попутний евакуатор та професійні послуги автовоза по всій Україні та
-							Європі. <br />
-							Ваш автомобіль - наша турбота.
+						<p className='w-full text-white/80 text-center md:text-left text-[14px] xl:text-normal'>
+							Попутний евакуатор, перегін з водієм та професійні послуги автовоза по
+							всій Україні та Європі. Ваш автомобіль — наша турбота.
 						</p>
 					</div>
 					<div className='w-full flex flex-col gap-y-3 mx-auto xl:pl-4 items-center md:items-start order-2 md:order-3 lg:order-2'>
@@ -42,7 +41,7 @@ const Footer = () => {
 						<h4 className='text-xl font-bold mb-2 text-white'>Послуги</h4>
 						{servicesFooter.map(el => (
 							<Link
-								href='#services'
+								href={el.href}
 								key={el.name}
 								className='text-lg text-white hover:text-accent-secondary transition-colors duration-300 hover:underline'
 							>

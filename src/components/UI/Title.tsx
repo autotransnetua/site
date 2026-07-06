@@ -4,9 +4,17 @@ type TitleProps = {
 	description?: string
 	className?: string
 	isCentered?: boolean
+	titleColor?: string
 }
 
-const Title = ({ title, subtitle, description, className, isCentered }: TitleProps) => {
+const Title = ({
+	title,
+	subtitle,
+	description,
+	className,
+	isCentered,
+	titleColor = 'primary'
+}: TitleProps) => {
 	return (
 		<div className={`w-full max-w-480 mx-auto flex flex-col ${className}`}>
 			{title && (
@@ -20,7 +28,7 @@ const Title = ({ title, subtitle, description, className, isCentered }: TitlePro
 			)}
 			{subtitle && (
 				<h3
-					className={`mt-2 text-3xl font-bold text-primary ${isCentered ? 'text-center' : ''}`}
+					className={`mt-2 text-3xl font-bold text-${titleColor} ${isCentered ? 'text-center' : ''}`}
 				>
 					{subtitle}
 				</h3>
