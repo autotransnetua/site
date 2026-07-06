@@ -12,7 +12,7 @@ const Driver = () => {
 	return (
 		<Section className='py-10 lg:py-14 bg-bg' id='driver'>
 			<Container className='py-6 lg:py-10 w-full bg-primary flex flex-col lg:flex-row items-center gap-10 xl:gap-8'>
-				<div className='w-full lg:w-1/2 flex rounded-2xl flex-col items-center overflow-hidden'>
+				<div className='w-full lg:w-1/2 flex rounded-2xl flex-col items-center overflow-hidden order-2 lg:order-1'>
 					<Image
 						src='/images/driver.png'
 						alt='Driver'
@@ -21,7 +21,7 @@ const Driver = () => {
 						className='w-full h-full object-cover'
 					/>
 				</div>
-				<div className='w-full lg:w-1/2 flex flex-col gap-6 py-6 px-6'>
+				<div className='w-full lg:w-1/2 flex flex-col gap-6 py-6 px-6 order-1 lg:order-2'>
 					<Title
 						className='max-w-5xl mx-auto'
 						title='Нова послуга'
