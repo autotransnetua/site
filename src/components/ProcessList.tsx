@@ -51,9 +51,9 @@ const ProcessList = () => {
 					<div className='mx-auto w-18 h-18 rounded-full border-4 border-accent-secondary text-accent-secondary flex items-center justify-center bg-white mb-8 group-hover:bg-hovered/5 transition-colors duration-300'>
 						{el.icon}
 					</div>
-					<p className='text-xl font-bold mb-3 relative z-10 text-primary text-center mx-auto'>
+					<h3 className='font-(family-name:--font-body) text-xl font-bold mb-3 relative z-10 text-primary text-center mx-auto'>
 						{el.title}
-					</p>
+					</h3>
 					<p className='leading-relaxed text-center'>{el.description}</p>
 				</li>
 			))}

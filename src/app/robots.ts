@@ -1,6 +1,12 @@
+import { isIndexable, siteUrl } from '@/constants/baseConstants'
+
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+	if (!isIndexable) {
+		return { rules: [{ userAgent: '*', disallow: '/' }] }
+	}
+
 	return {
 		rules: [
 			{
@@ -9,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: '/thank-you'
 			}
 		],
-		sitemap: 'https://autotrans.com.ua/sitemap.xml'
+		sitemap: `${siteUrl}/sitemap.xml`
 	}
 }

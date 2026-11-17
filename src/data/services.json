@@ -10,7 +10,7 @@
 			"Фіксована ціна — без сюрпризів"
 		],
 		"textBtn": "Замовити попутне перевезення",
-		"img": "/images/photo_1.png"
+		"img": "/images/service-poputnyi.webp"
 	},
 	{
 		"id": "222",
@@ -23,7 +23,7 @@
 			"Повне CMR страхування"
 		],
 		"textBtn": "Отримати консультацію",
-		"img": "/images/photo_2.png"
+		"img": "/images/service-yevropa.webp"
 	},
 	{
 		"id": "3333",
@@ -36,6 +36,6 @@
 			"Зворотній зв'язок протягом 5 хвилин після заявки"
 		],
 		"textBtn": "Викликати евакуатор",
-		"img": "/images/photo_3.png"
+		"img": "/images/service-individualnyi.webp"
 	}
 ]

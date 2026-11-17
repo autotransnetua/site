@@ -9,7 +9,7 @@ const Reviews = () => {
 		<Section className='py-16 lg:py-20 bg-white relative'>
 			<QuoteIcon className='absolute top-8 right-8 z-0 opacity-15' />
 			<Container className='w-full flex flex-col'>
-				<Title className='' title='Відгуки' />
+				<Title className='' title='Відгуки клієнтів' />
 
 				<ReviewsList />
 			</Container>

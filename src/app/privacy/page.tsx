@@ -1,11 +1,17 @@
-import { email, tel } from '@/constants/baseConstants'
+import { email, openGraphBase, tel } from '@/constants/baseConstants'
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+const title = 'Політика конфіденційності'
+const description =
+	'Як AutoTrans збирає, використовує та захищає персональні дані, які ви залишаєте в заявці на перевезення авто.'
+
 export const metadata: Metadata = {
-	title: 'Політика конфіденційності | AutoTrans',
-	robots: { index: true, follow: true }
+	title,
+	description,
+	alternates: { canonical: '/privacy' },
+	openGraph: { ...openGraphBase, url: '/privacy', title, description }
 }
 
 export default function PrivacyPage() {
@@ -23,7 +29,7 @@ export default function PrivacyPage() {
 			<h2 className='font-semibold text-lg mt-8 mb-3'>1. Яку інформацію ми збираємо</h2>
 			<p className='mb-3'>При залишенні заявки або зверненні до нас ми можемо збирати:</p>
 			<ul className='list-disc pl-5 space-y-1 mb-4'>
-				<li>Ім`я та прізвище</li>
+				<li>Ім’я та прізвище</li>
 				<li>Номер телефону</li>
 				<li>Адресу електронної пошти (якщо надається)</li>
 				<li>Міста відправлення та призначення</li>
@@ -35,10 +41,10 @@ export default function PrivacyPage() {
 			<p className='mb-3'>Зібрана інформація використовується виключно для:</p>
 			<ul className='list-disc pl-5 space-y-1 mb-4'>
 				<li>Обробки вашої заявки та надання послуг перевезення</li>
-				<li>Зв`язку з вами щодо вашого замовлення</li>
+				<li>Зв’язку з вами щодо вашого замовлення</li>
 				<li>Розрахунку вартості та підбору маршруту</li>
 				<li>Покращення якості наших послуг</li>
-				<li>Виконання юридичних зобов`язань</li>
+				<li>Виконання юридичних зобов’язань</li>
 			</ul>
 			<p>
 				Ми не використовуємо ваші дані для автоматизованого прийняття рішень або

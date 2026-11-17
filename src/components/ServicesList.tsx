@@ -41,7 +41,8 @@ const ServicesList = () => {
 							alt={el.title}
 							className='object-cover group-hover:scale-105 transition-transform duration-300'
 							fill
-							priority
+							// object-cover у високій колонці розтягує фото ширше за 45vw
+							sizes='100vw'
 						/>
 						<div
 							className={`absolute top-0 bottom-0 z-1 w-1/5 ${

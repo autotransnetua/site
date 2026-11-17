@@ -11,16 +11,16 @@ const Form = () => {
 			<Container className='w-full flex flex-col items-center gap-y-10 xl:gap-y-14'>
 				<Title
 					className='max-w-5xl mx-auto'
-					title='Зв`яжіться з нами'
-					subtitle='Наші оператори працюють 24/7.'
+					title='Зв’яжіться з нами'
+					subtitle='Замовити евакуатор — оператори на зв’язку 24/7'
 					isCentered
 				/>
 				{/* items-stretch — обидві колонки однакової висоті */}
 				<div className='flex flex-col lg:flex-row items-stretch justify-between w-full gap-10'>
 					<div className='w-full lg:w-[50%] rounded-2xl overflow-hidden'>
 						<Image
-							src='/images/form-photo.jpg'
-							alt='Form Image'
+							src='/images/form-photo.webp'
+							alt='Диспетчерка AutoTrans приймає заявку на перевезення авто'
 							width={600}
 							height={400}
 							className='w-full h-full object-cover'

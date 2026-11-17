@@ -38,21 +38,23 @@ const Benefits = () => {
 	return (
 		<Section className='bg-white py-14 lg:py-16'>
 			<Container className='flex flex-col'>
-				<Title title='Наші переваги' isCentered />
-				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mt-8'>
+				<Title title='Чому вигідно перевозити авто з AutoTrans' isCentered />
+				<ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mt-8'>
 					{items.map(el => (
-						<ul
-							key={el.description}
-							className='w-full md:w-75 2xl:w-95 flex flex-col items-start p-4 xl:p-6 rounded-xl hover:bg-hovered/15  hover:shadow-lg hover:scale-105 transition-all duration-300 mx-auto bg-bg'
+						<li
+							key={el.title}
+							className='w-full md:w-75 2xl:w-95 flex flex-col items-start p-4 xl:p-6 rounded-xl hover:bg-hovered/15 hover:shadow-lg hover:scale-105 transition-all duration-300 mx-auto bg-bg'
 						>
-							<li className='mb-6 w-16 h-16 flex items-center justify-center text-white bg-accent-secondary shadow-lg shadow-orange-500/30 rounded-lg'>
+							<div className='mb-6 w-16 h-16 flex items-center justify-center text-white bg-accent-secondary shadow-lg shadow-orange-500/30 rounded-lg'>
 								{el.icon}
-							</li>
-							<li className='text-2xl font-semibold text-primary mb-4'>{el.title}</li>
-							<li className='text-lg text-justify'>{el.description}</li>
-						</ul>
+							</div>
+							<h3 className='font-(family-name:--font-body) text-2xl font-semibold text-primary mb-4'>
+								{el.title}
+							</h3>
+							<p className='text-lg text-justify'>{el.description}</p>
+						</li>
 					))}
-				</div>
+				</ul>
 			</Container>
 		</Section>
 	)

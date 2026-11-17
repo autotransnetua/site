@@ -7,8 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-	title: 'Дякуємо за звернення | AutoTrans',
-	description: 'Ваша заявка прийнята. Ми зв`яжемося з вами найближчим часом',
+	title: 'Дякуємо за звернення',
+	description: 'Ваша заявка прийнята. Ми зв’яжемося з вами найближчим часом',
 	robots: { index: false, follow: false }
 }
 
@@ -27,8 +27,8 @@ export default function ThankYouPage() {
 					{/* Фото — таке саме як у Form */}
 					<div className='w-full lg:w-[50%] rounded-2xl overflow-hidden'>
 						<Image
-							src='/images/form-photo.jpg'
-							alt='Дякуємо'
+							src='/images/form-photo.webp'
+							alt=''
 							width={600}
 							height={400}
 							className='w-full h-full object-cover'
@@ -45,7 +45,7 @@ export default function ThankYouPage() {
 								Заявку прийнято!
 							</h2>
 							<p className='text-slate-500 text-base leading-relaxed max-w-xs'>
-								Ваше повідомлення отримано. Ми зв`яжемося з вами найближчим часом.
+								Ваше повідомлення отримано. Ми зв’яжемося з вами найближчим часом.
 							</p>
 
 							<div className='mt-8 flex flex-col items-center gap-4 w-full'>

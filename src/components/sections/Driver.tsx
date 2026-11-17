@@ -14,8 +14,8 @@ const Driver = () => {
 			<Container className='py-6 lg:py-10 w-full bg-primary flex flex-col lg:flex-row items-center gap-10 xl:gap-8'>
 				<div className='w-full lg:w-1/2 flex rounded-2xl flex-col items-center overflow-hidden order-2 lg:order-1'>
 					<Image
-						src='/images/driver.png'
-						alt='Driver'
+						src='/images/driver.webp'
+						alt='Водій AutoTrans для перегону авто'
 						width={800}
 						height={600}
 						className='w-full h-full object-cover'

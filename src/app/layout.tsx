@@ -3,9 +3,11 @@ import Footer from '@/components/sections/Footer'
 import Header from '@/components/sections/Header'
 
 import './globals.css'
+import { isIndexable, openGraphBase, siteUrl } from '@/constants/baseConstants'
 
 import type { Metadata } from 'next'
 import { Montserrat, Raleway } from 'next/font/google'
+import Script from 'next/script'
 
 const montserrat = Montserrat({
 	subsets: ['latin', 'cyrillic'],
@@ -21,52 +23,21 @@ const raleway = Raleway({
 	display: 'swap'
 })
 
+const title = 'Евакуатор по Україні — попутний та індивідуальний | AutoTrans'
+const description =
+	'Попутний та індивідуальний евакуатор між містами України, доставка авто з Європи. Київ, Харків, Дніпро, Одеса, Львів. Фіксована ціна, відповідь за 5 хвилин.'
+
 export const metadata: Metadata = {
-	metadataBase: new URL('https://autotrans.net.ua'),
-	title: 'Евакуатор по Україні — попутний та Індивідуальний | AutoTrans',
-	description:
-		'Попутний та індивідуальний евакуатор між містами України та доставка авто з Європи. Київ, Харків, Дніпро, Одеса, Львів — щоденні рейси. Фіксована ціна, відповідь за 5 хвилин.',
-	keywords: [
-		'попутний евакуатор',
-		'індивідуальний евакуатор',
-		'екстрений евакуатор',
-		'термінова евакуація',
-		'евакуатор ДТП',
-		'попутний евакуатор',
-		'перевезення авто по Україні',
-		'евакуатор міжміський',
-		'автовоз Україна',
-		'доставка авто з Європи',
-		'евакуатор з Польщі',
-		'перевезення авто дешево',
-		'евакуатор попутно',
-		'індивідуальний евакуатор по Україні',
-		'перевезення авто після ДТП',
-		'евакуатор цілодобово',
-		'негабаритне перевезення',
-		'евакуатор Київ Харків',
-		'евакуатор Київ Дніпро',
-		'евакуатор Київ Одеса',
-		'евакуатор Львів Київ',
-		'ввезення авто з Польщі',
-		'доставка авто з Німеччини',
-		'AutoTrans'
-	],
-	robots: { index: true, follow: true },
-
-	alternates: {
-		canonical: 'https://autotrans.net.ua'
-	},
-
+	metadataBase: new URL(siteUrl),
+	title: { default: title, template: '%s | AutoTrans' },
+	description,
+	robots: isIndexable ? { index: true, follow: true } : { index: false, follow: false },
 	openGraph: {
-		type: 'website',
-		url: 'https://autotrans.net.ua',
-		title: 'Евакуатор по Україні — попутний та Індивідуальний | AutoTrans',
+		...openGraphBase,
+		url: '/',
+		title,
 		description:
-			'Перевезення авто між містами України та доставка з Польщі, Німеччини, Литви. Платите лише в один бік — до 50% економії.',
-		images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
-		locale: 'uk_UA',
-		siteName: 'AutoTrans'
+			'Перевезення авто між містами України та доставка з Польщі, Німеччини, Литви. Платите лише в один бік — до 50% економії.'
 	}
 }
 
@@ -77,19 +48,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='uk' className={`${raleway.variable} ${montserrat.variable} h-full antialiased`}>
-			<head>
-				{/* eslint-disable-next-line @next/next/next-script-for-ga */}
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			<body className='min-h-full flex flex-col relative'>
+				<Script id='gtm' strategy='afterInteractive'>
+					{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NZQ65FWN');`
-					}}
-				/>
-			</head>
-			<body className='min-h-full flex flex-col relative'>
+})(window,document,'script','dataLayer','GTM-NZQ65FWN');`}
+				</Script>
 				<noscript>
 					<iframe
 						src='https://www.googletagmanager.com/ns.html?id=GTM-NZQ65FWN'
@@ -99,7 +65,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					/>
 				</noscript>
 				<Header />
-				{children} <Footer />
+				{children}
+				<Footer />
 				<ContactsBtns />
 			</body>
 		</html>

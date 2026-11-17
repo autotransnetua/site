@@ -16,22 +16,29 @@ const FAQItem = ({
 	onToggle: () => void
 }) => {
 	return (
-		<div
-			className={`w-full lg:max-w-[80%] lx:max-w-[70%] border-b border-white/10 cursor-pointer transition-colors duration-200 group bg-white rounded-lg px-5 py-3 mx-auto`}
-			onClick={onToggle}
-		>
-			<div className='py-5 flex justify-between items-center'>
-				<h4 className='text-base md:text-lg text-primary font-semibold pr-8 transition-colors duration-200 group-hover:text-accent-secondary'>
-					{item.question}
-				</h4>
-				<span
-					className={`text-accent-secondary text-xl font-light shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-45' : 'rotate-0'}`}
+		<div className='w-full lg:max-w-[80%] border-b border-white/10 transition-colors duration-200 group bg-white rounded-lg px-5 py-3 mx-auto'>
+			<h3 className='font-(family-name:--font-body)'>
+				<button
+					type='button'
+					onClick={onToggle}
+					aria-expanded={isOpen}
+					aria-controls={`faq-${item.id}`}
+					className='w-full py-5 flex justify-between items-center text-left'
 				>
-					+
-				</span>
-			</div>
+					<span className='text-base md:text-lg text-primary font-semibold pr-8 transition-colors duration-200 group-hover:text-accent-secondary'>
+						{item.question}
+					</span>
+					<span
+						aria-hidden='true'
+						className={`text-accent-secondary text-xl font-light shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-45' : 'rotate-0'}`}
+					>
+						+
+					</span>
+				</button>
+			</h3>
 
 			<div
+				id={`faq-${item.id}`}
 				className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'} pl-4`}
 			>
 				<div className='overflow-hidden'>

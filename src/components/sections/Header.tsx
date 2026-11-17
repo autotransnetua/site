@@ -35,7 +35,7 @@ const Header = () => {
 							{navLinks.map(link => (
 								<Link
 									key={link.name}
-									href={`/${link.href}`}
+									href={link.href}
 									className='text-xl font-semibold text-accent-secondary hover:text-accent transition-colors'
 								>
 									{link.name}
@@ -63,7 +63,7 @@ const Header = () => {
 
 			{/* Затемнення фону */}
 			<div
-				className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 md:hidden ${
+				className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
 					isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
 				}`}
 				onClick={close}
@@ -104,7 +104,7 @@ const Header = () => {
 					{navLinks.map(link => (
 						<Link
 							key={`${link.name}`}
-							href={`/${link.href}`}
+							href={link.href}
 							onClick={close}
 							className='text-lg font-semibold text-white/80 hover:text-accent-secondary py-3 border-b border-white/10 transition-colors duration-200'
 						>
@@ -116,7 +116,7 @@ const Header = () => {
 				{/* Кнопка внизу */}
 				<div className='px-6 pb-10'>
 					<Link
-						href='#contact'
+						href='/#contact'
 						onClick={close}
 						className='btn btn-primary w-full text-center block'
 					>
