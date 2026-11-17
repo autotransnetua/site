@@ -3,18 +3,18 @@
 		"id": "price-1",
 		"title": "Послуги евакуатора до 2 тон",
 		"price": "25 грн/км",
-		"img": "/images/price-1.jpg"
+		"img": "/images/price-1.webp"
 	},
 	{
 		"id": "price-2",
 		"title": "Послуги евакуатора до 3 тон",
 		"price": "30 грн/км",
-		"img": "/images/price-2.png"
+		"img": "/images/price-2.webp"
 	},
 	{
 		"id": "price-3",
 		"title": "Вантажний евакуатор до 5 тон",
 		"price": "35 грн/км",
-		"img": "/images/price-3.png"
+		"img": "/images/price-3.webp"
 	}
 ]

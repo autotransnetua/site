@@ -19,7 +19,7 @@ const Footer = () => {
 						</p>
 					</div>
 					<div className='w-full flex flex-col gap-y-3 mx-auto xl:pl-4 items-center md:items-start order-2 md:order-3 lg:order-2'>
-						<h4 className='text-xl font-bold mb-2 text-white'>Навігація</h4>
+						<p className='text-xl font-bold mb-2 text-white'>Навігація</p>
 						{navLinks.map(el => (
 							<Link
 								href={el.href}
@@ -30,7 +30,7 @@ const Footer = () => {
 							</Link>
 						))}
 						<Link
-							href={'#faq'}
+							href='/#faq'
 							className='text-lg text-white hover:text-accent-secondary transition-colors duration-300 hover:underline'
 						>
 							Часті запитання
@@ -38,7 +38,7 @@ const Footer = () => {
 					</div>
 
 					<div className='w-full flex flex-col gap-y-3 mx-auto items-center md:items-start order-3 md:order-4 lg:order-3'>
-						<h4 className='text-xl font-bold mb-2 text-white'>Послуги</h4>
+						<p className='text-xl font-bold mb-2 text-white'>Послуги</p>
 						{servicesFooter.map(el => (
 							<Link
 								href={el.href}
@@ -51,7 +51,7 @@ const Footer = () => {
 					</div>
 
 					<div className='w-full flex flex-col gap-y-3 mx-auto items-center md:items-start order-4 md:order-2 lg:order-4'>
-						<h4 className='text-xl font-bold mb-2 text-white'>Зв`язок</h4>
+						<p className='text-xl font-bold mb-2 text-white'>Зв’язок</p>
 						<div className='flex items-center gap-x-2 text-accent-secondary'>
 							<PhoneIcon className='w-5! h-5!' />{' '}
 							<Link
@@ -81,7 +81,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className='mt-12 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm'>
-					<p>© 2026 AutoTrans. Всі права захищено.</p>
+					<p>© {new Date().getFullYear()} AutoTrans. Всі права захищено.</p>
 					<div className='w-fit flex flex-col md:flex-row gap-4 text-white/80 text-xs mx-auto mt-4'>
 						<Link href='/privacy' className='hover:underline'>
 							Політика конфіденційності

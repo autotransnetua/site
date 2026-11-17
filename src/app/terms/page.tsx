@@ -1,11 +1,17 @@
-import { email, tel } from '@/constants/baseConstants'
+import { email, openGraphBase, tel } from '@/constants/baseConstants'
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+const title = 'Умови використання'
+const description =
+	'Умови користування сайтом AutoTrans і замовлення евакуатора та перевезення авто по Україні та з Європи.'
+
 export const metadata: Metadata = {
-	title: 'Умови використання | AutoTrans',
-	robots: { index: true, follow: true }
+	title,
+	description,
+	alternates: { canonical: '/terms' },
+	openGraph: { ...openGraphBase, url: '/terms', title, description }
 }
 
 export default function TermsPage() {
@@ -55,8 +61,8 @@ export default function TermsPage() {
 				витрати на порожній виїзд.
 			</p>
 
-			<h2 className='font-semibold text-lg mt-8 mb-3'>4. Обов`язки сторін</h2>
-			<p className='mb-2 font-medium'>Клієнт зобов`язується:</p>
+			<h2 className='font-semibold text-lg mt-8 mb-3'>4. Обов’язки сторін</h2>
+			<p className='mb-2 font-medium'>Клієнт зобов’язується:</p>
 			<ul className='list-disc pl-5 space-y-1 mb-4'>
 				<li>Надати достовірну інформацію про транспортний засіб та маршрут</li>
 				<li>Забезпечити доступ до автомобіля у домовлений час</li>
@@ -66,12 +72,12 @@ export default function TermsPage() {
 				</li>
 				<li>Прибрати цінні речі з салону перед завантаженням</li>
 			</ul>
-			<p className='mb-2 font-medium'>AutoTrans зобов`язується:</p>
+			<p className='mb-2 font-medium'>AutoTrans зобов’язується:</p>
 			<ul className='list-disc pl-5 space-y-1 mb-4'>
 				<li>Надати виконавця у домовлений час</li>
 				<li>Забезпечити безпечне транспортування</li>
 				<li>Здійснити фото- та відеофіксацію при завантаженні та вивантаженні</li>
-				<li>Підтримувати зв`язок з клієнтом протягом усього маршруту</li>
+				<li>Підтримувати зв’язок з клієнтом протягом усього маршруту</li>
 			</ul>
 
 			<h2 className='font-semibold text-lg mt-8 mb-3'>5. Відповідальність</h2>
@@ -93,10 +99,10 @@ export default function TermsPage() {
 
 			<h2 className='font-semibold text-lg mt-8 mb-3'>6. Форс-мажор</h2>
 			<p>
-				Сторони звільняються від відповідальності за невиконання зобов`язань, спричинене
+				Сторони звільняються від відповідальності за невиконання зобов’язань, спричинене
 				обставинами непереборної сили: воєнними діями, надзвичайними ситуаціями, рішеннями
 				державних органів, стихійними лихами. Про настання таких обставин сторона
-				зобов`язана повідомити іншу в найкоротші строки.
+				зобов’язана повідомити іншу в найкоротші строки.
 			</p>
 
 			<h2 className='font-semibold text-lg mt-8 mb-3'>7. Інтелектуальна власність</h2>

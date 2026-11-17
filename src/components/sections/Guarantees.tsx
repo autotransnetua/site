@@ -10,8 +10,8 @@ const Guarantees = () => {
 				<Title
 					className='lg:max-w-[85%] xl:max-w-[70%] mx-auto'
 					title='Чому Обирають Нас'
-					description='Наші Гарантії'
-					subtitle='Ми не просто перевозимо машини - ми доставляємо спокій.'
+					description='Ми не просто перевозимо машини — ми доставляємо спокій.'
+					subtitle='Гарантії безпечного перевезення вашого авто'
 					isCentered
 				/>
 

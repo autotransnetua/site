@@ -10,7 +10,7 @@ const Questions = () => {
 				<Title
 					className=''
 					description='Поширені запитання про наші послуги перевезення.'
-					subtitle='Часті Запитання'
+					subtitle='Часті запитання про евакуатор і перевезення авто'
 					isCentered
 				/>
 				<FAQList />

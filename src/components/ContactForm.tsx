@@ -1,17 +1,15 @@
-/* eslint-disable react-hooks/refs */
 'use client'
 
 import { sendMessage } from '@/app/actions/sendMessage'
 
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { IMaskInput } from 'react-imask'
 import Toastify from 'toastify-js'
 import 'toastify-js/src/toastify.css'
 
 const LS_KEY = 'contact_form_data'
-const REDIRECT_DELAY = 5
 
 type FormValues = {
 	name: string
@@ -36,11 +34,8 @@ function showErrorToast(text: string) {
 }
 
 export default function ContactForm() {
-	const [submitted, setSubmitted] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
-	const [countdown, setCountdown] = useState(REDIRECT_DELAY)
 
-	const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null)
 	const openedAtRef = useRef<number>(0)
 
 	const router = useRouter()
@@ -69,34 +64,6 @@ export default function ContactForm() {
 		} catch {}
 	}, [setValue])
 
-	// handleReset — повертає форму з даними з localStorage (ім'я + телефон)
-	const handleReset = useCallback(() => {
-		reset({ name: '', phone: '', message: '', honeypot: '' }, { keepDefaultValues: false })
-		openedAtRef.current = Date.now()
-		setSubmitted(false)
-	}, [reset])
-
-	useEffect(() => {
-		if (!submitted) return
-
-		let remaining = REDIRECT_DELAY
-		// eslint-disable-next-line react-hooks/set-state-in-effect
-		setCountdown(remaining)
-
-		countdownRef.current = setInterval(() => {
-			remaining -= 1
-			setCountdown(remaining)
-			if (remaining <= 0) {
-				clearInterval(countdownRef.current!)
-				handleReset()
-			}
-		}, 1000)
-
-		return () => {
-			if (countdownRef.current) clearInterval(countdownRef.current)
-		}
-	}, [submitted, handleReset])
-
 	const handlePersist = (field: 'name' | 'phone', value: string) => {
 		try {
 			const saved = localStorage.getItem(LS_KEY)
@@ -112,7 +79,7 @@ export default function ContactForm() {
 		}
 
 		// check elapsed time since form opened
-		// eslint-disable-next-line react-hooks/purity
+		// eslint-disable-next-line react-hooks/purity -- виконується в обробнику submit, не в рендері
 		const elapsed = Date.now() - openedAtRef.current
 		if (elapsed < 3000) {
 			router.push('/thank-you')
@@ -147,52 +114,13 @@ export default function ContactForm() {
 		}
 	}
 
-	const handleManualReset = () => {
-		if (countdownRef.current) clearInterval(countdownRef.current)
-		handleReset()
-	}
-
-	// ─── Success state ───────────────────────────────────────────
-	if (submitted) {
-		return (
-			<div className='w-full lg:w-[50%] flex flex-col items-center justify-center bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100 min-h-64'>
-				<div className='flex flex-col items-center text-center'>
-					<div className='w-16 h-16 rounded-full bg-accent-secondary flex items-center justify-center text-white text-2xl font-bold mb-5'>
-						✓
-					</div>
-					<h2 className='text-2xl font-bold text-primary mb-3'>Дякуємо!</h2>
-					<p className='text-slate-500 text-base leading-relaxed max-w-xs'>
-						Ваше повідомлення отримано. Ми зв`яжемося з вами найближчим часом.
-					</p>
-					<div className='mt-8 flex flex-col items-center gap-3 w-full'>
-						<p className='text-sm text-slate-400'>
-							Форма оновиться автоматично через{' '}
-							<span className='font-bold text-accent-secondary'>{countdown}</span> с
-						</p>
-						<div className='w-48 h-1 bg-slate-200 rounded-full overflow-hidden'>
-							<div
-								className='h-full bg-accent-secondary rounded-full transition-all duration-1000 ease-linear'
-								style={{ width: `${(countdown / REDIRECT_DELAY) * 100}%` }}
-							/>
-						</div>
-						<button
-							onClick={handleManualReset}
-							className='mt-2 text-sm text-slate-400 underline underline-offset-4 hover:text-accent-secondary transition-colors duration-200 cursor-pointer'
-						>
-							Надіслати ще раз
-						</button>
-					</div>
-				</div>
-			</div>
-		)
-	}
-
 	// ─── Form ────────────────────────────────────────────────────
 	return (
 		<div className='w-full lg:w-[50%] flex flex-col bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100'>
-			<h2 className='text-primary text-2xl font-bold mb-6'>Напишіть Нам</h2>
+			<h3 className='text-primary text-2xl font-bold mb-6'>Напишіть Нам</h3>
 
 			<form
+				// eslint-disable-next-line react-hooks/refs -- ref читається лише під час submit
 				onSubmit={handleSubmit(onSubmit)}
 				noValidate
 				className='flex flex-col flex-1 gap-y-5'
@@ -215,7 +143,7 @@ export default function ContactForm() {
 				{/* Ім'я */}
 				<div className='flex flex-col gap-y-1.5 relative'>
 					<label htmlFor='name' className='text-sm font-bold text-primary'>
-						Ваше Ім`я
+						Ваше Ім’я
 					</label>
 					<input
 						id='name'

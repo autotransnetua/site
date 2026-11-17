@@ -7,27 +7,41 @@ type MessageData = {
 	sentAt: string
 }
 
+const REQUEST_TIMEOUT = 10_000
+
+// Telegram parse_mode HTML: без екранування "<" у тексті клієнта ламає відправку
+const escapeHtml = (value: string) =>
+	value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 // ─── Telegram ────────────────────────────────────────────────
 async function sendToTelegram(data: MessageData): Promise<void> {
 	const token = process.env.TG_BOT_TOKEN
 	const chatId = process.env.TG_CHAT_ID
 
-	if (!token || !chatId) throw new Error('Telegram credentials are not configured')
-
 	const text = [
 		`<b>Нова заявка з сайту</b>`,
 		``,
-		`<b>Ім'я:</b> ${data.name}`,
-		`<b>Телефон:</b> ${data.phone}`,
-		`<b>Повідомлення:</b> ${data.message || '—'}`,
+		`<b>Ім'я:</b> ${escapeHtml(data.name)}`,
+		`<b>Телефон:</b> ${escapeHtml(data.phone)}`,
+		`<b>Повідомлення:</b> ${escapeHtml(data.message) || '—'}`,
 		``,
-		`<b>Час:</b> ${data.sentAt}`
+		`<b>Час:</b> ${escapeHtml(data.sentAt)}`
 	].join('\n')
+
+	if (!token || !chatId) {
+		// Локальна розробка без ключів: заявка йде в консоль замість Telegram
+		if (process.env.NODE_ENV !== 'production') {
+			console.info('[DEV] Telegram message:\n' + text)
+			return
+		}
+		throw new Error('Telegram credentials are not configured')
+	}
 
 	const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
+		body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+		signal: AbortSignal.timeout(REQUEST_TIMEOUT)
 	})
 
 	const result = await res.json()
@@ -60,7 +74,8 @@ async function sendToSalesDrive(data: MessageData): Promise<void> {
 			comment: data.message || '',
 			sajt: process.env.NEXT_PUBLIC_SITE_URL ?? '',
 			utmPage: '/'
-		})
+		}),
+		signal: AbortSignal.timeout(REQUEST_TIMEOUT)
 	})
 
 	if (!res.ok) {

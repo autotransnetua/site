@@ -11,7 +11,7 @@ const Process = () => {
 					className='lg:max-w-[85%] xl:max-w-[70%] mx-auto'
 					title='Процес'
 					description='Як Це Працює'
-					subtitle='Простий процес з 4 кроків для безпечного перевезення Вашого авто.'
+					subtitle='Як замовити перевезення авто — 4 простих кроки'
 					isCentered
 				/>
 

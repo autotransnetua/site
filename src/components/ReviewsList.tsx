@@ -71,7 +71,7 @@ const ReviewCard = ({
 					{getInitials(el.name)}
 				</div>
 				<div>
-					<h4 className='text-sm font-bold text-primary'>{el.name}</h4>
+					<p className='text-sm font-bold text-primary'>{el.name}</p>
 					<p className='text-xs text-primary/50'>{el.position}</p>
 				</div>
 			</div>

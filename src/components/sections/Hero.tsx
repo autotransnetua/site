@@ -13,21 +13,17 @@ const Hero = () => {
 			{/* Background Image with Overlay */}
 			<div className='absolute inset-0 z-0'>
 				<Image
-					src='/images/hero.png'
-					alt='Car carrier truck background'
+					src='/images/hero.webp'
+					alt=''
 					className='w-full h-full object-cover opacity-40'
 					fill
+					sizes='100vw'
 					priority
 				/>
 				<div className='absolute inset-0 bg-linear-to-r from-primary/90 via-primary/60 to-transparent'></div>
 			</div>
 			<Container className='relative z-10 h-full flex flex-col justify-center'>
 				<div className='max-w-4xl flex flex-col gap-y-6 h-full justify-center pt-8 md:pt-0'>
-					{/* <h3 className='hidden md:flex items-center text-xl text-accent order-1 gap-x-2'>
-						Перевозимо авто
-						<span className='w-2 h-2 rounded-full bg-accent-secondary/80' /> Доставляємо
-						спокій
-					</h3> */}
 					<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white order-2'>
 						<span className='text-accent-secondary'>Попутний</span> та <br />
 						<span className='text-accent-secondary'>індивідуальний</span> Евакуатор{' '}
@@ -43,10 +39,10 @@ const Hero = () => {
 					<p className='text-xl font-semibold text-white leading-relaxed order-4'>
 						Економія до 50% на перевезенні авто завдяки попутним маршрутам. <br />
 						Надійно, безпечно та вчасно. Ваш автомобіль у надійних руках.
-					</p>{' '}
-					<h3 className='text-xl text-accent-secondary gap-x-2 order-5'>
+					</p>
+					<p className='heading text-xl text-accent-secondary gap-x-2 order-5'>
 						Ціна: від 25 грн/км — Телефонуйте!
-					</h3>
+					</p>
 					<div className='flex flex-col sm:flex-row gap-4 xl:gap-6 order-7 md:order-6'>
 						<Link href={`tel:${tel}`} className='text-lg btn btn-primary'>
 							<PhoneIcon />

@@ -1,12 +1,9 @@
+import { siteUrl } from '@/constants/baseConstants'
+
 import type { MetadataRoute } from 'next'
 
+const pages = ['/', '/privacy', '/terms']
+
 export default function sitemap(): MetadataRoute.Sitemap {
-	return [
-		{
-			url: 'https://autotrans.net.ua',
-			lastModified: new Date(),
-			changeFrequency: 'monthly',
-			priority: 1
-		}
-	]
+	return pages.map(path => ({ url: `${siteUrl}${path}` }))
 }

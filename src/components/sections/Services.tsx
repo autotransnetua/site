@@ -8,7 +8,7 @@ const Services = () => {
 			<div className='w-full flex flex-col gap-y-12'>
 				<Title
 					title='Наші послуги'
-					subtitle='Що ми пропонуємо.'
+					subtitle='Послуги евакуатора по Україні та з Європи'
 					description='Комплексні рішення для перевезення вашого автомобіля по Україні та за кордон.'
 					isCentered
 				/>
